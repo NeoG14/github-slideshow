@@ -1,22 +1,105 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tema3;
 
-<title>{% if post.title %}{{ post.title }} | {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+/**
+ *
+ * @author nico_
+ */
+public class Triangulo {
+    private double cateto1;
+    private double cateto2;
+    private double hipotenusa;
+    private String colorRelleno;
+    private String colorLinea;
+    
+    public Triangulo(double a,  double b, double c){
+        a = this.cateto1;
+        b = this.cateto2;
+        c = this.hipotenusa; 
+    }
 
-<link rel="stylesheet" href="{{ site.baseurl }}/node_modules/reveal.js/css/reveal.css">
+    /**
+     * @return the cateto1
+     */
+    public double getCateto1() {
+        return cateto1;
+    }
 
-<link rel="stylesheet" href="{{site.baseurl}}/node_modules/reveal.js/css/reset.css">
-<link rel="stylesheet" href="{{site.baseurl}}/node_modules/reveal.js/css/reveal.css">
-<link rel="stylesheet" href="{{site.baseurl}}/node_modules/reveal.js/css/theme/moon.css">
+    /**
+     * @param cateto1 the cateto1 to set
+     */
+    public void setCateto1(double cateto1) {
+        this.cateto1 = cateto1;
+    }
 
-<!-- Theme used for syntax highlighting of code -->
-<link rel="stylesheet" href="{{site.baseurl}}/node_modules/reveal.js/lib/css/monokai.css">
+    /**
+     * @return the cateto2
+     */
+    public double getCateto2() {
+        return cateto2;
+    }
 
-<!-- Printing and PDF exports -->
-<script>
-	var link = document.createElement( 'link' );
-	link.rel = 'stylesheet';
-	link.type = 'text/css';
-	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
-	document.getElementsByTagName( 'head' )[0].appendChild( link );
-</script>
+    /**
+     * @param cateto2 the cateto2 to set
+     */
+    public void setCateto2(double cateto2) {
+        this.cateto2 = cateto2;
+    }
+
+    /**
+     * @return the hipotenusa
+     */
+    public double getHipotenusa() {
+        return hipotenusa;
+    }
+
+    /**
+     * @param hipotenusa the hipotenusa to set
+     */
+    public void setHipotenusa(double hipotenusa) {
+        this.hipotenusa = hipotenusa;
+    }
+
+    /**
+     * @return the colorRelleno
+     */
+    public String getColorRelleno() {
+        return colorRelleno;
+    }
+
+    /**
+     * @param colorRelleno the colorRelleno to set
+     */
+    public void setColorRelleno(String colorRelleno) {
+        this.colorRelleno = colorRelleno;
+    }
+
+    /**
+     * @return the colorLinea
+     */
+    public String getColorLinea() {
+        return colorLinea;
+    }
+
+    /**
+     * @param colorLinea the colorLinea to set
+     */
+    public void setColorLinea(String colorLinea) {
+        this.colorLinea = colorLinea;
+    }
+    
+    public double calcularArea(double a, double b, double c){
+        double s = (a+b+c)/2;
+        double area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        return area;
+    }
+    
+    public double calcularPerimetro(double a, double b, double c){
+        double p = a+b+c;
+        return p;
+    }
+}
